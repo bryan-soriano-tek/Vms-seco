@@ -1,0 +1,14 @@
+mbim-test
+---------
+This app uses lite-mbim to communicate with device. Its is a basic "Hello world" app for lite-mbim,
+implementing one MBIM request. Supply the device path to a USB MBIM interface, or PCIe MBIM interface,
+on the command-line. 
+
+Examples:
+
+To use over PCIe.
+./bin/mbim-test-hostx86_64 /dev/mhi_0200_00.03.00_pipe_12
+
+To use over USB.
+./bin/mbim-test-hostx86_64 /dev/cdc-wdm0
+

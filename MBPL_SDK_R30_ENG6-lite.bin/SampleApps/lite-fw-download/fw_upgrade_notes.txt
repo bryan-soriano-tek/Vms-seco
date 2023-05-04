@@ -1,0 +1,70 @@
+1 Environment preparation and synchronization
+
+  The following steps should be taken to synchronize the device and host platform whenever needed.
+  a. Power off both device and host platform
+  b. Power on device/dev kit
+  c. Power on host platform
+  d. Open terminal, and type command "ls /dev/mh*".  The following devices should be listed.
+  
+    - /dev/mhi_aabb_xx.yy.zz_pipe_12 (MBIM interface)
+    - /dev/mhi_aabb_xx.yy.zz_pipe_14 (QMI interface)
+    - /dev/mhitty0 (DM)
+    - /dev/mhitty1 (AT)
+  
+  e. AT port (/dev/mhitty1) should work after the host platform synchronized with the device.
+    - In terminal, type command "sudo minicom -D /dev/mhitty1" to open AT port, and verify with AT command "ati"
+    
+  Firmware download should perform succesfully (and repeatedly) without having to resynchronize the modem with the host platform. However, if any errors occur during a firmware download (or any other operations), the synchronization steps (described above) shall be followed.
+  
+
+2. FW upgrade from 00.10.00.00 to 00.11.04.00 (or newer).  The FW upgrade is only supported on DV3.x hardware.
+
+2.1 Resync device and host platform as described in section 1.
+
+2.2 Backup NV with AT commands
+  - sudo minicom -D /dev/mhitty1
+  - at!entercnd="A710"
+  - at!nvbackup=2
+
+2.3 Download boot_of.cwe image file which should be retrieved from the FW BP4.3B1-Alpha4 release folder.
+  - Copy boot_of.cwe into Boot folder (Boot folder is located in the same folder as fwdwl-litehostx86_64 binary.  The folder should now contain only one file boot_of.cwe.)
+  - sudo ./fwdwl-litehostx86_64 -f Boot -g /dev/mhitty0 -r -p /dev/mhi_aabb_xx.yy.zz_pipe_12 -d /dev/mhiqdl0 -m 4 -l boot_of.log
+    
+  NOTE 1: This step downloads boot_of.cwe into device.  Option "-r" specifies to switch device into QDL mode via DM command; while option "-g" specifies the DM port interface.
+
+  NOTE 2: The device should come back in application mode after downloading boot_of.cwe image.  If download fails (device not coming back to applictaion mode), please open another terminal and check device interfaces with command: "ls /dev/mh*".  If all device interfaces are shown and AT port works correctly, proceed with next step.  If not, resync device and host platform as described in section 1.
+    
+2.4 Download boot_parti_update.cwe image file which should be retrieved from the FW BP4.3B1-Alpha4 release folder.  
+  - sudo minicom -D /dev/mhitty1
+  - at!entercnd="A710"
+  - at!boothold (device should reset into download mode here)
+  - Copy boot_parti_update.cwe into Partition folder (Partition folder is located in the same folder as fwdwl-litehostx86_64 binary.  The folder should now contain only one file boot_parti_update.cwe.)
+  - sudo ./fwdwl-litehostx86_64 -f Partition -p /dev/mhi_aabb_xx.yy.zz_pipe_12 -d /dev/mhiqdl0 -m 4 -l partition.log
+  
+  NOTE: It is expected for the lite-fw-download tool to report failure in this step because the device remains in download mode after the download. Additional device power cycles or hardware resets after this download are NOT recommended.
+    
+2.5 Download 00.11.04.00 FW + OEM PRI images (SWIX55C_00.11.04.00.cwe and 1104567_9909484_EM9190_00.11.04.00_00_Generic_001.009_000.nvu from FW BP4.3B1-Alpha4 release)  
+  - Copy the following FW image files into the OEM folder (OEM folder is located in the same folder as fwdwl-litehostx86_64 binary. The folder should now contain the following files)
+    a) SWIX55C_00.11.04.00.cwe
+    b) 1104567_9909484_EM9190_00.11.04.00_00_Generic_001.009_000.nvu
+  - sudo ./fwdwl-litehostx86_64 -f OEM -p /dev/mhi_aabb_xx.yy.zz_pipe_12 -d /dev/mhiqdl0 -c MBIM -m 4 -l fw.log
+  
+  NOTE: The device should boot into application mode after this download is completed.  Resync the device and host platform (as described in section 1) if the device stays in download mode and lite-fw-download tool reports failures.
+  
+2.6 Download 00.11.04.00 FW + Carrier PRI images (SWIX55C_00.11.04.00.cwe and SWIX55C_00.11.04.00_Generic_005.002_000.nvu from the FW BP4.3B1-Alpha4 release folder)
+  - Resync device and host platform (only if needed)
+  - Copy the following image files into the FW folder (FW folder is located in the same folder as fwdwl-litehostx86_64 binary.  The folder should now contain the following files only)
+    a) SWIX55C_00.11.04.00.cwe
+    b) SWIX55C_00.11.04.00_Generic_005.002_000.nvu
+  - ls /dev/mh*
+    This is to confirm the current device interfaces.  Upon a successful FW download in step 2.5, device interface names change (due to the change in the PCIe ID).  This is to make sure the correct interface name is used in the following FW download command.
+  - sudo ./fwdwl-litehostx86_64 -f FW -p /dev/mhi_aabb_xx.yy.zz_pipe_12 -d /dev/mhiqdl0 -c MBIM -m 4 -l fw_pri.log
+
+2.7 Back up NV settings and verify image preferences
+  - Resync device and host platform (only if needed)
+  - sudo minicom -D /dev/mhitty1
+  - at!entercnd="A710"
+  - at!nvbackup=2
+  - ati
+  - at!package?
+  - at!impref?

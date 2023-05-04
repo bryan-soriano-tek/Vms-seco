@@ -1,0 +1,26 @@
+var structcdma_msg_decoding_params_ext =
+[
+    [ "absoluteValidity", "structcdma_msg_decoding_params_ext.html#a709b6d455e773503954d70c641328c26", null ],
+    [ "mcTimeStamp", "structcdma_msg_decoding_params_ext.html#a0337235107c2c76454fddc55791bfeb4", null ],
+    [ "messageLength", "structcdma_msg_decoding_params_ext.html#a0866086d121b352ec732b37db47e6829", null ],
+    [ "pAlertPriority", "structcdma_msg_decoding_params_ext.html#af10289c7bf327dc2bcc64a44cc98931d", null ],
+    [ "pCallbkAddr", "structcdma_msg_decoding_params_ext.html#ab25d9c622684942e0939fe41dea27848", null ],
+    [ "pCallbkAddrLength", "structcdma_msg_decoding_params_ext.html#a4fe7743210f226ab2aea0cf66c17fdf3", null ],
+    [ "pDisplayMode", "structcdma_msg_decoding_params_ext.html#af733641239bcaebf858d1a611d872f83", null ],
+    [ "pIsUDHPresent", "structcdma_msg_decoding_params_ext.html#aa06fa9846400b40275ee96a7ad912b8c", null ],
+    [ "pLanguage", "structcdma_msg_decoding_params_ext.html#a134264d00ea178d99e6e2dfddf33e226", null ],
+    [ "pMessage", "structcdma_msg_decoding_params_ext.html#a5ead1fe6b3830ebd4165968a4d4c38a4", null ],
+    [ "pMessageID", "structcdma_msg_decoding_params_ext.html#a6ce7b0880b4ab3beb6ce16d3593302bb", null ],
+    [ "pPartNum", "structcdma_msg_decoding_params_ext.html#a54fedaf66f0cc3148f62115c8832a73a", null ],
+    [ "pPriority", "structcdma_msg_decoding_params_ext.html#a9a7cb15321c56788414ca0d44ed99d19", null ],
+    [ "pPrivacy", "structcdma_msg_decoding_params_ext.html#aae87979e0785b718737c336822ab69eb", null ],
+    [ "pReadAcknowledgementReq", "structcdma_msg_decoding_params_ext.html#a920cd0b61aa155ac0ccfc98a600e7189", null ],
+    [ "pReferenceNum", "structcdma_msg_decoding_params_ext.html#a0035388f565ae6d98aca674c372b5d2a", null ],
+    [ "pRelativeValidity", "structcdma_msg_decoding_params_ext.html#ac185a6c19c7682feddfd40fe16a0dec2", null ],
+    [ "pSenderAddr", "structcdma_msg_decoding_params_ext.html#a1a5c3f251d15f1750454a81fecc075bf", null ],
+    [ "pSenderAddrLength", "structcdma_msg_decoding_params_ext.html#a845cf06397b0dc2865256b97fada888d", null ],
+    [ "pTextMsg", "structcdma_msg_decoding_params_ext.html#ad556b65460616c9dc815204dda5d383a", null ],
+    [ "pTextMsgLength", "structcdma_msg_decoding_params_ext.html#a7ea1ce1426b0b60452bdc4b918e65f55", null ],
+    [ "pTotalNum", "structcdma_msg_decoding_params_ext.html#a6b2089390e30086bb1e5d8afc83724ef", null ],
+    [ "pUserAcknowledgementReq", "structcdma_msg_decoding_params_ext.html#aa0375ca569a0c34bd0df3a59aeb83895", null ]
+];

@@ -1,0 +1,27 @@
+var struct_measurement_report_ext_s_vs =
+[
+    [ "carrierPhase", "struct_measurement_report_ext_s_vs.html#a0cb374cc31f24bd64bc6fcfb034dd0b6", null ],
+    [ "CNo", "struct_measurement_report_ext_s_vs.html#a9b00a9313d3b86b94de5bbeacc134e15", null ],
+    [ "cycleSlipCount", "struct_measurement_report_ext_s_vs.html#ae3a198f6833e0d6cce11bdcc935ab91a", null ],
+    [ "dopplerAccel", "struct_measurement_report_ext_s_vs.html#a034de400cc544294ee5ac139e3f4ed3a", null ],
+    [ "dopplerAccel_valid", "struct_measurement_report_ext_s_vs.html#acb49cb43499effb583f7bfbe26db7fb7", null ],
+    [ "dopplerShift", "struct_measurement_report_ext_s_vs.html#a1e72732f514af29a4408d40e1135ae3a", null ],
+    [ "dopplerShiftUnc", "struct_measurement_report_ext_s_vs.html#aa06eaad52d029dadf5022e34ffebe3c7", null ],
+    [ "fineSpeed", "struct_measurement_report_ext_s_vs.html#a5b51c9d974d167428e8cdb87ceabca11", null ],
+    [ "fineSpeedUnc", "struct_measurement_report_ext_s_vs.html#a865462865111687768927799d4447f55", null ],
+    [ "gloRfLoss", "struct_measurement_report_ext_s_vs.html#ad5c69eb62b28a052a29c25ce9beb83c8", null ],
+    [ "healthStatus", "struct_measurement_report_ext_s_vs.html#ac390c5986a3cd1699669eea9439e4678", null ],
+    [ "lossOfLock", "struct_measurement_report_ext_s_vs.html#a0b04784d6f786549af7b714df305596e", null ],
+    [ "measLatency", "struct_measurement_report_ext_s_vs.html#a28b16f84326b7febccaaf28c9c1d0b40", null ],
+    [ "measurementStatus", "struct_measurement_report_ext_s_vs.html#a22b6c924da0ee699227e0ba46cf31a92", null ],
+    [ "multipathEstimate", "struct_measurement_report_ext_s_vs.html#affaf4a1a8792dad97e2d79d6ea670558", null ],
+    [ "svAzimuth", "struct_measurement_report_ext_s_vs.html#a3759505ebca6379a615159afc1bd392a", null ],
+    [ "svElevation", "struct_measurement_report_ext_s_vs.html#ad00c66a9493f32c20b7772818ec07c4c", null ],
+    [ "svInfoMask", "struct_measurement_report_ext_s_vs.html#a6379b4a3003e4147453108aa89bdeb80", null ],
+    [ "svStatus", "struct_measurement_report_ext_s_vs.html#a04e7db7a0adb5ee2938097e1ab7e9a5a", null ],
+    [ "svTimeMs", "struct_measurement_report_ext_s_vs.html#ad91b13dae1df6fa1d026c94dc56dbff8", null ],
+    [ "svTimeSubMs", "struct_measurement_report_ext_s_vs.html#a76f1d1fce7891a8b4c25e2f01af3163e", null ],
+    [ "svTimeUncMs", "struct_measurement_report_ext_s_vs.html#a505da2c6155ab4a42596a99f462120d3", null ],
+    [ "validMask", "struct_measurement_report_ext_s_vs.html#a64273c70d95e1934ea88376ea8dcf478", null ],
+    [ "validMeasStatusMask", "struct_measurement_report_ext_s_vs.html#adeab077ee25194241089929a0cf8d69b", null ]
+];

@@ -1,0 +1,22 @@
+lite-qmux-demo
+---------------------
+This app uses lite-qmi and lite-qmux. It is a basic "Hello world" app for lite-qmux, implementing
+one QMI request.
+If "mbim" is passed on the command line,the underlying layer will be MBIM,
+otherwise direct-QMUX.
+
+App usage:
+
+  <appName> <QMI/MBIM device path> <mbim>
+
+Examples:
+
+To use direct-QMUX transport over PCIe.
+./bin/lite-qmux-demo-hostx86_64 /dev/mhi_0200_00.03.00_pipe_14
+
+To use MBIM transport over PCIe.
+./bin/lite-qmux-demo-hostx86_64 /dev/mhi_0200_00.03.00_pipe_12 mbim
+
+To use To use MBIM transport over USB.
+./bin/lite-qmux-demo-hostx86_64 /dev/cdc-wdm0 mbim
+
